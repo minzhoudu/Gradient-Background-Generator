@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Background generator</title>
+</head>
+
+<body class="gradient">
+    <h1>Background Generator</h1>
+    <h2>Create CSS Background</h2>
+    <div>
+        <input class="clr1" type="color" name="color1" value="#ff0000">
+        <input class="clr2" type="color" name="color2" value="#ffff00">
+    </div>
+    <select name="side" id="side">
+
+        <option value="to top">To Top</option>
+        <option value="to bottom">To Bottom</option>
+
+        <option value="to right">To Right</option>
+        <option value="to bottom right">To Bottom Right</option>
+        <option value="to top right">To Top Right</option>
+
+
+        <option value="to left">To Left</option>
+        <option value="to bottom left">To Bottom Left</option>
+        <option value="to top left">To Top Left</option>
+
+
+    </select>
+    <div class="random">
+        <button class="random-btn">Generate random colors</button>
+    </div>
+    <h3 class="output"></h3>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
