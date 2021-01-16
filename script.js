@@ -1,22 +1,24 @@
-let output = document.querySelector(".output");
-let input1 = document.querySelector(".clr1");
-let input2 = document.querySelector(".clr2");
-let bg = document.querySelector(".gradient");
-let random = document.querySelector(".random-btn");
-let side = document.getElementById("side");
+const output = document.querySelector(".output");
+const [input1, input2] = document.querySelectorAll(".clr");
+const bg = document.querySelector(".gradient");
+const random = document.querySelector(".random-btn");
+const side = document.getElementById("side");
+
+let setGradient = () => {
+    bg.style.background = _linearGradient();
+    output.textContent = `${bg.style.background};`
+}
+
+input1.addEventListener('input', setGradient);
+input2.addEventListener('input', setGradient);
+random.addEventListener('click', randomClr);
+side.addEventListener('change', setGradient);
 
 
-input1.addEventListener("input", setGradient);
-input2.addEventListener("input", setGradient);
-random.addEventListener("click", randomClr);
-side.addEventListener("change", setGradient);
+let _linearGradient = () => {
+    return `linear-gradient(${side.options[side.selectedIndex].value}, ${input1.value}, ${input2.value}) `;
 
-function setGradient() {
-    bg.style.background = "linear-gradient(" + side.options[side.selectedIndex].value + "," + input1.value + ", " + input2.value + ") "
-
-    // dodavanje teksta u prazan h3 
-    output.textContent = bg.style.background + ";"
-};
+}
 
 function randomClr() {
     input1.value = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
