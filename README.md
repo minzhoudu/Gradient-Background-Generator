@@ -1,1 +1,2 @@
-# background-generator
+# MY LINEAR GRADIENT RANDOM GENERATOR
+
